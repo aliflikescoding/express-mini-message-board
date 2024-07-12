@@ -2,11 +2,53 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p class="text-red-500">Welcome to <%= title %></p>
-    <p>test</p>
+    <div class="max-w-[1440px] mx-auto font-roboto">
+      <div class="mx-[20px] sm:mx-[70px] lg:mx-[140px]">
+        <div class="flex justify-center p-5">
+          <h1
+            class="tracking-wider text-xl font-bold sm:font-semibold sm:text-4xl font-poppins uppercase"
+          >
+            <span><%= title %></span> <i class="fa-solid fa-message"></i>
+          </h1>
+        </div>
+        <div class="mt-8 sm:mb-5 flex sm:flex-row flex-col justify-between">
+          <div>
+            <p class="text-base font-medium sm:text-xl">
+              Welcome to <%= title %>!
+            </p>
+            <p class="text-base font-medium sm:text-xl">
+              Here are a couple of recent messages
+            </p>
+          </div>
+          <div class="flex my-5 sm:my-0">
+            <a class="bg-blue-500 hover:bg-blue-700 px-5 py-5 rounded-xl text-md sm:text-xl font-semibold text-white flex justify-center items-center hover:cursor-pointer" href="/new">Add New Message</a>
+          </div>
+        </div>
+        <ul class="overflow-y-scroll h-[70vh] p-5 shadow rounded-md w-full max-w-[100%]">
+          <% messages.forEach((message) => { %>
+          <li class="mb-4 shadow p-8 rounded-md break-words">
+            <span class="text-blue-500 text-lg font-semibold"><%= message.user %>:</span>
+            <span class="text-xl block mt-2"><%= message.text %></span>
+            <small class="block mt-2"><%= message.added.toLocaleString() %></small>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+      <div class="py-[30px] flex justify-center">
+        <p class="text-xl">© copyright <a href="https://github.com/aliflikescoding" target="_">Aliflikescoding <i class="fa-brands fa-github"></i></a> 2024</p>
+      </div>
+    </div>
   </body>
 </html>

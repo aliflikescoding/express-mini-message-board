@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www",
+    "devstart": "concurrently \"npm run watch:css\" \"nodemon ./bin/www\"",
     "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart",
-    "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
+    "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
+    "watch:css": "nodemon -e ejs,css -x \"npm run tailwind:css\""
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "autoprefixer": "^10.4.19",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -21,6 +23,7 @@
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.1.4"
   }
 }

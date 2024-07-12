@@ -1,13 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/*.ejs"],
+  content: ["./views/**/*.ejs"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+      },
+    },
   },
   plugins: [
-    {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+    require('tailwindcss'),
+    require('autoprefixer'),
   ],
 };

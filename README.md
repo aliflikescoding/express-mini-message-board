@@ -4,7 +4,7 @@
 
 ## Output
 
-Visit [The Live Page]() to view the details
+Visit [[The Live Page](https://nd-exprs-mini-msg-board-production.up.railway.app/)]() to view the details
 
 ## Description
 

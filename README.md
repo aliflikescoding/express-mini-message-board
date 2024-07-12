@@ -29,7 +29,6 @@ In this project we used vast amount of modern technologies such as:
 ### ⚙️ Packages Installation
 
 ```shell
-cd app
 npm i / install
 ```
 
@@ -38,7 +37,8 @@ npm i / install
 #### to start it
 
 ```shell
- npm run dev
+ npm run tailwind:css
+ npm run serverstart
 ```
 
 ### 🔗 Cloning the repository

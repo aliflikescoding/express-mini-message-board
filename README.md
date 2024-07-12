@@ -37,7 +37,6 @@ npm i / install
 #### to start it
 
 ```shell
- npm run tailwind:css
  npm run serverstart
 ```
 

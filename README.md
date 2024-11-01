@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">A Basic Mini Message Board App Project in ReactJS made using NodeJS, Express, EJS, and sytled using Tailwind CSS</h1>
+  <h1 align="center">A Basic Mini Message Board App Project  made using Express, EJS, and sytled using Tailwind CSS</h1>
 </p>
 
 ## Output
